@@ -22,12 +22,11 @@ def main():
     param_name = param_name[1:]
 
     torch_param = discriminator.state_dict()
-    count = 0
     param_name_pt = []
     for key in torch_param.keys():
         if 'resample' not in key:
             param_name_pt.append(key)
-            count += 1
+
     print('Extraction of names of params completed.')
 
     for i in range(len(param_name)):
